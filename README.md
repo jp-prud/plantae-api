@@ -36,6 +36,8 @@ Instale as dependências
 
 Importar as requisições para o Postman de dentro do repositório - Arquivo: API-Plantae
 
+Para acessar a documentação é só adicionar `/api-docs` na url do localhost.
+
 ## Autores
 
 - [@jpprud_](https://github.com/jp-prud/)
