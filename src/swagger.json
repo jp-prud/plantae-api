@@ -1,0 +1,548 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Plantae Documentation",
+    "description": "Docs",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/product": {
+      "get": {
+        "tags": ["Product"],
+        "summary": "Get List Products",
+        "description": "Get a products list",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "price": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Product"],
+        "summary": "Create a Product",
+        "description": "Create a new Product",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": {
+                    "type": "Banana"
+                  },
+                  "description": {
+                    "type": "Descrição de um product"
+                  },
+                  "price": {
+                    "type": "20.3"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Algum campo não foi devidamente inserido"
+          },
+          "400": {
+            "description": "O Produto já existe"
+          }
+        }
+      }
+    },
+    "/product/{id}": {
+      "get": {
+        "tags": ["Product"],
+        "summary": "Get Product",
+        "description": "Get a product",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Product not found"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Product"],
+        "summary": "Update Product",
+        "description": "Update a consumer Product",
+        "parameters": {
+          "in": "path",
+          "name": "id",
+          "schema": {
+            "type": "string"
+          },
+          "require": "true",
+          "description": "ID to get product"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": {
+                    "type": "Banana"
+                  },
+                  "description": {
+                    "type": "Descrição de um product"
+                  },
+                  "price": {
+                    "type": "20.3"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Product"],
+        "summary": "Delete Product",
+        "description": "Delete a Product"
+      }
+    },
+    "/consumers": {
+      "get": {
+        "tags": ["Consumers"],
+        "summary": "Get List Consumer",
+        "description": "Get a Consumer list",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "password": {
+                          "type": "string"
+                        },
+                        "phone": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Exists on error in database"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Consumers"],
+        "summary": "Create a Consumers",
+        "description": "Create a new Consumers",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": "Jhon Doe",
+                  "email": "jhon.doe@mail.com",
+                  "password": "xpto-mengo",
+                  "phone": "00 0000-0000"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "consumers/{id}": {
+      "get": {
+        "tags": ["Consumers"],
+        "summary": "Get Consumer",
+        "description": "Get a Consumer",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "phone": {
+                  "type": "string"
+                }
+              }
+            },
+            "example": {
+              "type": "object",
+              "properties": {
+                "name": "Jhon Doe",
+                "email": "jhon.doe@mail.com",
+                "password": "password",
+                "phone": "00 0000-0000"
+              }
+            }
+          },
+          "404": {
+            "description": "Consumer is not fount"
+          },
+          "400": {
+            "description": "ID is not valid or exist one error in the database"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Consumers"],
+        "summary": "Update a Consumer",
+        "description": "Update a Consumer",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": "Jhon Doe",
+                  "email": "jhon.doe@mail.com",
+                  "password": "password",
+                  "phone": "00 0000-0000"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Consumer is Update"
+          },
+          "400": {
+            "description": "Email is required"
+          },
+          "404": {
+            "description": "Consumer is not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Consumers"],
+        "summary": "Delete Consumer",
+        "description": "Delete a Consumer",
+        "response": {
+          "200": "Consumer is deleted",
+          "400": "ID is invalid or exist on error in the database",
+          "404": "Consumer does not exist"
+        }
+      }
+    },
+    "/productive-locale": {
+      "get": {
+        "tags": ["Productive Locale"],
+        "summary": "Get Productive Locale",
+        "description": "Get a Consumer Productive Locale"
+      },
+      "post": {
+        "tags": ["Productive Locale"],
+        "summary": "Create a Productive Locale",
+        "description": "Create a new Productive Locale",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": {
+                    "type": "Jhon Doe"
+                  },
+                  "email": {
+                    "type": "jhon.doe@mail.com"
+                  },
+                  "password": {
+                    "type": "xpto-mengo"
+                  },
+                  "phone": {
+                    "type": "00 0000-0000"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/productive-locale/{id}": {
+      "get": {
+        "tags": ["Productive Locale"],
+        "summary": "Get Productive Locale",
+        "description": "Get a Consumer Productive Locale"
+      },
+      "put": {
+        "tags": ["Productive Locale"],
+        "summary": "Update Productive Locale",
+        "description": "Update a Productive Locale",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": {
+                    "type": "Jhon Doe"
+                  },
+                  "email": {
+                    "type": "jhon.doe@mail.com"
+                  },
+                  "password": {
+                    "type": "xpto-mengo"
+                  },
+                  "phone": {
+                    "type": "00 0000-0000"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Productive Locale"],
+        "summary": "Delete Productive Locale",
+        "description": "Delete a Productive Locale"
+      }
+    },
+    "/quality-seal": {
+      "get": {
+        "tags": ["Quality Seal"],
+        "summary": "Get Quality Locale",
+        "description": "Get a Quality Locale"
+      },
+      "post": {
+        "tags": ["Quality Seal"],
+        "summary": "Create a Quality Locale",
+        "description": "Create a new Quality Locale",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": {
+                    "type": "Jhon Doe"
+                  },
+                  "email": {
+                    "type": "jhon.doe@mail.com"
+                  },
+                  "password": {
+                    "type": "xpto-mengo"
+                  },
+                  "phone": {
+                    "type": "00 0000-0000"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/quality-seal/{id}": {
+      "get": {
+        "tags": ["Quality Seal"],
+        "summary": "Get Quality Locale",
+        "description": "Get a Quality Locale"
+      },
+      "put": {
+        "tags": ["Quality Seal"],
+        "summary": "Update Quality Locale",
+        "description": "Update a Quality Locale",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": {
+                    "type": "Jhon Doe"
+                  },
+                  "email": {
+                    "type": "jhon.doe@mail.com"
+                  },
+                  "password": {
+                    "type": "xpto-mengo"
+                  },
+                  "phone": {
+                    "type": "00 0000-0000"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Quality Seal"],
+        "summary": "Delete Quality Locale",
+        "description": "Delete a Quality Locale"
+      }
+    }
+  }
+}
