@@ -10,11 +10,6 @@ CREATE TABLE IF NOT EXISTS product (
   created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS harvests (
-  harvested_in VARCHAR NOT NULL,
-  created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
-);
-
 CREATE TABLE IF NOT EXISTS quality_seal (
   id UUID NOT NULL UNIQUE DEFAULT uuid_generate_v4(),
   name VARCHAR(255) NOT NULL,
@@ -29,26 +24,6 @@ CREATE TABLE IF NOT EXISTS productive_locale (
   quality_seal_id UUID,
   FOREIGN KEY(quality_seal_id) REFERENCES quality_seal(id),
   created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
-);
-
-CREATE TABLE IF NOT EXISTS productions (
-  id UUID NOT NULL UNIQUE DEFAULT uuid_generate_v4(),
-  product_id UUID NOT NULL,
-  harvests_id UUID NOT NULL,
-  FOREIGN KEY(product_id) REFERENCES product (id),
-  FOREIGN KEY(harvests_id) REFERENCES harvests (harvested_in ),
-  created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
-)
-
-CREATE TABLE IF NOT EXISTS producer (
-  id UUID NOT NULL UNIQUE DEFAULT uuid_generate_v4(),
-  name VARCHAR NOT NULL,
-  email VARCHAR NOT NULL UNIQUE,
-  password VARCHAR NOT NULL,
-  phone VARCHAR,
-  productive_locale_id UUID,
-  FOREIGN KEY(productive_locale_id) REFERENCES productive_locale(id),
-  created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
 );
 
 CREATE TABLE IF NOT EXISTS consumer (
