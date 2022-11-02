@@ -1,0 +1,494 @@
+{
+	"info": {
+		"_postman_id": "01fe59d1-7547-41a8-bc05-c64d03291035",
+		"name": "Dev Web",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18803659"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Show Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/product/437a83a2-88d7-4ffc-a254-fb2ab565fa89",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"product",
+								"437a83a2-88d7-4ffc-a254-fb2ab565fa89"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Products",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Banana\",\r\n    \"description\": \"Alimento livre de agrotóxicos!\",\r\n    \"price\": 14.5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Banana Prata\",\r\n    \"description\": \"Alimento livre de agrotóxicos!\",\r\n    \"price\": 14.5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/product/96a2c9af-508c-414a-9fab-3dc282a41596",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"product",
+								"96a2c9af-508c-414a-9fab-3dc282a41596"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/product/437a83a2-88d7-4ffc-a254-fb2ab565fa89",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"product",
+								"437a83a2-88d7-4ffc-a254-fb2ab565fa89"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consumers",
+			"item": [
+				{
+					"name": "Show Consumer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/consumer/170eb0fe-b0d4-4778-bebf-722077467ee4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"consumer",
+								"170eb0fe-b0d4-4778-bebf-722077467ee4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Consumers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/consumer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"consumer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Consumer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jhon Doe\",\r\n    \"email\": \"jhon.doe@mail.com\",\r\n    \"password\": \"xpto4231\",\r\n    \"phone\": \"00 0000-0000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/consumer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"consumer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Consumer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jhon Doe\",\r\n    \"email\": \"jhon_doe@mail.com\",\r\n    \"password\": \"xpto4231\",\r\n    \"phone\": \"00 0000-0000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/consumer/170eb0fe-b0d4-4778-bebf-722077467ee4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"consumer",
+								"170eb0fe-b0d4-4778-bebf-722077467ee4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Consumer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/consumer/170eb0fe-b0d4-4778-bebf-722077467ee4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"consumer",
+								"170eb0fe-b0d4-4778-bebf-722077467ee4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Productive Locale",
+			"item": [
+				{
+					"name": "Show Productive Locale",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/productive-locale/a38bf847-fbd3-41ce-bc4e-63ad38550897",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"productive-locale",
+								"a38bf847-fbd3-41ce-bc4e-63ad38550897"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Productives Locales",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/productive-locale",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"productive-locale"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Productive Locale",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Fazenda Feliz\",\r\n    \"address_info\": \"Local Rua X Numero Y\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/productive-locale",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"productive-locale"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Productive Locale",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Fazenda Feliz\",\r\n    \"address_info\": \"Local Rua X Numero Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/productive-locale/a38bf847-fbd3-41ce-bc4e-63ad38550897",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"productive-locale",
+								"a38bf847-fbd3-41ce-bc4e-63ad38550897"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Productive Locale",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/productive-locale/a38bf847-fbd3-41ce-bc4e-63ad38550897",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"productive-locale",
+								"a38bf847-fbd3-41ce-bc4e-63ad38550897"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quality Seal",
+			"item": [
+				{
+					"name": "Show Quality Seal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/quality-seal/129f8625-d1e4-4b5f-a5af-d3e26efe1978",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"quality-seal",
+								"129f8625-d1e4-4b5f-a5af-d3e26efe1978"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Quality Seal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/quality-seal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"quality-seal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Quality Seal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Premium\",\r\n    \"image\": \"htttp:www.xpto.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/quality-seal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"quality-seal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Quality Seal",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Gold\",\r\n    \"image\": \"htttp:www.xpto.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/quality-seal/129f8625-d1e4-4b5f-a5af-d3e26efe1978",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"quality-seal",
+								"129f8625-d1e4-4b5f-a5af-d3e26efe1978"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Quality Seal",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/quality-seal/129f8625-d1e4-4b5f-a5af-d3e26efe1978",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"quality-seal",
+								"129f8625-d1e4-4b5f-a5af-d3e26efe1978"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
