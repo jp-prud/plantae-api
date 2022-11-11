@@ -27,6 +27,18 @@
       1,
       { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
     ],
-    "prettier/prettier": "error"
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "": "never",
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "prettier/prettier": "error",
+    "import/no-unresolved": "false"
   }
 }
