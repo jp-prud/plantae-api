@@ -39,6 +39,14 @@
       }
     ],
     "prettier/prettier": "error",
-    "import/no-unresolved": "false"
+    "import/no-unresolved": "warn",
+    "import/no-extraneous-dependencies": [
+      "warn",
+      {
+        "devDependencies": false,
+        "optionalDependencies": false,
+        "peerDependencies": false
+      }
+    ]
   }
 }
