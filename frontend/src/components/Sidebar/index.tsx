@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { Wrapper, LinksList } from './styles';
 
-export default function Sidebar() {
+export default function SideBar() {
   const linksMock = [
     { href: '/', label: 'Home' },
     { href: '/', label: 'Home' },
@@ -13,7 +13,11 @@ export default function Sidebar() {
     <Wrapper>
       <LinksList>
         {linksMock.map(link => (
-          <Link to={link.href}>{link.label}</Link>
+          <Link to={link.href}>
+            <img src="" alt="Icon" />
+
+            <span>{link.label}</span>
+          </Link>
         ))}
       </LinksList>
     </Wrapper>

@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Main = styled.main`
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
