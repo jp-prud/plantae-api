@@ -5,15 +5,20 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon src/index.js",
-    "test": ""
+    "lint": "eslint . --ext",
+    "lint-fix": "eslint . --ext --fix"
   },
   "author": "João Pedro Prudêncio",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^8.6.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
-    "nodemon": "^2.0.15"
+    "jsonwebtoken": "^8.5.1",
+    "nodemon": "^2.0.15",
+    "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1"
   },
   "dependencies": {
     "express": "^4.17.2",
