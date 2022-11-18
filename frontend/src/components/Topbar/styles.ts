@@ -45,7 +45,7 @@ export const RightContainer = styled.div`
 `;
 
 export const NewProduct = styled.div`
-  button {
+  a {
     height: 48px;
     display: flex;
     justify-content: center;
@@ -54,6 +54,7 @@ export const NewProduct = styled.div`
     background: linear-gradient(286.17deg, #01b763 0%, #14e685 100%);
     border-radius: 16px;
     color: #fff;
+    text-decoration: none;
     font-weight: 600;
     font-size: 16px;
     padding-inline: 16px;

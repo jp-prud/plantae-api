@@ -22,10 +22,10 @@ export default function TopBar() {
 
       <RightContainer>
         <NewProduct>
-          <button type="button">
+          <a role="button" href="/products">
             <img src={PlusIcon} alt="Plus Icon" />
-            Conheça o seu Produto
-          </button>
+            Adicione um novo Produto
+          </a>
         </NewProduct>
 
         <img src={BellIcon} alt="Notification" />
