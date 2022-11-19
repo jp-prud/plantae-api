@@ -11,12 +11,20 @@ export const Table = styled.div`
 export const TableHeader = styled(GenericContainer)`
   width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   gap: 8px;
 
-  h1 {
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
+`;
 
-  span {
-  }
+export const TableMain = styled(GenericContainer)`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 `;
