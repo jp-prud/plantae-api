@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
     "start": "nodemon src/index.js",
     "lint": "eslint . --ext",
-    "lint-fix": "eslint . --ext --fix"
+    "lint-fix": "eslint . --ext .js,.jsx --fix"
   },
   "author": "João Pedro Prudêncio",
   "license": "ISC",

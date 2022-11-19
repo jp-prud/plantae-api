@@ -1,4 +1,4 @@
-const ProductRepository = require("../repositories/ProductRepository");
+import ProductRepository from '../repositories/ProductRepository';
 
 class ProductController {
   async index(request, response) {
@@ -18,7 +18,7 @@ class ProductController {
       if (!product) {
         return response
           .status(404)
-          .json({ error: "Nenhum produto encontrado" });
+          .json({ error: 'Nenhum produto encontrado' });
       }
 
       response.status(200).json(product);
@@ -35,7 +35,7 @@ class ProductController {
     if (!name || !description || !price) {
       return response
         .status(400)
-        .json({ error: "Algum campo não foi devidamente inserido" });
+        .json({ error: 'Algum campo não foi devidamente inserido' });
     }
 
     try {
@@ -43,7 +43,7 @@ class ProductController {
 
       if (productByName) {
         return response.status(400).json({
-          error: "O produto já existe",
+          error: 'O produto já existe',
         });
       }
 
@@ -57,7 +57,7 @@ class ProductController {
         .status(200)
         .json({ message: `${newProduct.name}, produto inserido` });
     } catch (err) {
-      return response.status(400).json({ error: "Ocorreu um erro interno" });
+      return response.status(400).json({ error: 'Ocorreu um erro interno' });
     }
   }
 
@@ -68,7 +68,7 @@ class ProductController {
     if (!name || !description || !price) {
       return response
         .status(400)
-        .json({ error: "Algum campo não foi devidamente inserido" });
+        .json({ error: 'Algum campo não foi devidamente inserido' });
     }
 
     try {
@@ -76,7 +76,7 @@ class ProductController {
 
       if (!productExist) {
         return response.status(404).json({
-          error: "Produto não encontrado",
+          error: 'Produto não encontrado',
         });
       }
 
@@ -106,7 +106,7 @@ class ProductController {
       const productExist = await ProductRepository.findById(id);
 
       if (!productExist) {
-        return response.status(404).json({ error: "Produto não encontrado" });
+        return response.status(404).json({ error: 'Produto não encontrado' });
       }
 
       const product = await ProductRepository.delete(id);
@@ -122,4 +122,4 @@ class ProductController {
   }
 }
 
-module.exports = new ProductController();
+export default new ProductController();

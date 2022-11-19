@@ -1,4 +1,4 @@
-const db = require("../../database");
+import db from '../../database';
 
 class ConsumerRepository {
   async findAll() {
@@ -16,7 +16,7 @@ class ConsumerRepository {
     FROM consumer
     WHERE id = $1
   `,
-      [id]
+      [id],
     );
 
     return rows;
@@ -28,7 +28,7 @@ class ConsumerRepository {
       SELECT * FROM consumer
       WHERE name = $1
     `,
-      [name]
+      [name],
     );
 
     return rows;
@@ -40,7 +40,7 @@ class ConsumerRepository {
     SELECT * FROM consumer
     WHERE email = $1
   `,
-      [email]
+      [email],
     );
 
     return rows;
@@ -53,7 +53,7 @@ class ConsumerRepository {
       VALUES($1, $2, $3, $4)
       RETURNING *
     `,
-      [name, email, phone, password]
+      [name, email, phone, password],
     );
 
     return rows;
@@ -69,7 +69,7 @@ class ConsumerRepository {
       WHERE id = $1
       RETURNING *
     `,
-      [id, name, email, phone, password]
+      [id, name, email, phone, password],
     );
 
     return rows;
@@ -82,11 +82,11 @@ class ConsumerRepository {
       WHERE id = $1
       RETURNING *
     `,
-      [id]
+      [id],
     );
 
     return rows;
   }
 }
 
-module.exports = new ConsumerRepository();
+export default new ConsumerRepository();

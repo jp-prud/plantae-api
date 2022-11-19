@@ -1,4 +1,4 @@
-const QualitySealRepository = require("../repositories/QualitySealRepository");
+import QualitySealRepository from '../repositories/QualitySealRepository';
 
 class QualitySealController {
   async index(request, response) {
@@ -18,12 +18,12 @@ class QualitySealController {
       if (!qualitySeal) {
         return response
           .status(404)
-          .json({ error: "Selo de Qualidade não encontrado" });
+          .json({ error: 'Selo de Qualidade não encontrado' });
       }
 
       response.status(200).json(qualitySeal);
     } catch (e) {
-      console.log("Erro na requisição ou UUID não está no formato:", e);
+      console.log('Erro na requisição ou UUID não está no formato:', e);
     }
   }
 
@@ -34,7 +34,7 @@ class QualitySealController {
 
     if (qualitySealByName) {
       return response.status(400).json({
-        error: "Nome já está sendo usado",
+        error: 'Nome já está sendo usado',
       });
     }
 
@@ -56,19 +56,19 @@ class QualitySealController {
 
     if (!qualitySealExist) {
       return response.status(404).json({
-        error: "Selo de QUalidade não encontrado",
+        error: 'Selo de QUalidade não encontrado',
       });
     }
 
     if (!name) {
       return response.status(400).json({
-        error: "Nome é requerido",
+        error: 'Nome é requerido',
       });
     }
 
     if (!image) {
       return response.status(400).json({
-        error: "Imagem é requerido",
+        error: 'Imagem é requerido',
       });
     }
 
@@ -76,7 +76,7 @@ class QualitySealController {
 
     if (qualitySealByName && qualitySealByName.id !== id) {
       return response.status(400).json({
-        error: "Nome já está sendo utilizada",
+        error: 'Nome já está sendo utilizada',
       });
     }
 
@@ -99,7 +99,7 @@ class QualitySealController {
       if (!qualitySeal) {
         return response
           .status(404)
-          .json({ error: "Selo de Qualidade não encontrado" });
+          .json({ error: 'Selo de Qualidade não encontrado' });
       }
 
       const qualitySealExcluded = await QualitySealRepository.delete(id);
@@ -108,9 +108,9 @@ class QualitySealController {
         message: `${qualitySealExcluded.name} foi excluído`,
       });
     } catch (e) {
-      console.log("Erro na requisição ou UUID não está no formato:", e);
+      console.log('Erro na requisição ou UUID não está no formato:', e);
     }
   }
 }
 
-module.exports = new QualitySealController();
+export default new QualitySealController();

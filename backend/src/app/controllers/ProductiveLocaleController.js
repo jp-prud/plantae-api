@@ -1,4 +1,4 @@
-const ProductiveLocaleRepository = require("../repositories/ProductiveLocaleRepository");
+import ProductiveLocaleRepository from '../repositories/ProductiveLocaleRepository';
 
 class ProductiveLocaleController {
   async index(request, response) {
@@ -18,12 +18,12 @@ class ProductiveLocaleController {
       if (!productiveLocale) {
         return response
           .status(404)
-          .json({ error: "Local Produtivo não encontrado" });
+          .json({ error: 'Local Produtivo não encontrado' });
       }
 
       response.status(200).json(productiveLocale);
     } catch (e) {
-      console.log("Erro na requisição ou UUID não está no formato:", e);
+      console.log('Erro na requisição ou UUID não está no formato:', e);
     }
   }
 
@@ -35,7 +35,7 @@ class ProductiveLocaleController {
 
     if (productiveLocaleByAddress) {
       return response.status(400).json({
-        error: "Endereço já está sendo usado",
+        error: 'Endereço já está sendo usado',
       });
     }
 
@@ -58,19 +58,19 @@ class ProductiveLocaleController {
 
     if (!producerExist) {
       return response.status(404).json({
-        error: "Local Produtivo não encontrado",
+        error: 'Local Produtivo não encontrado',
       });
     }
 
     if (!name) {
       return response.status(400).json({
-        error: "Nome é requerido",
+        error: 'Nome é requerido',
       });
     }
 
     if (!address_info) {
       return response.status(400).json({
-        error: "Informações de Endereço são requeridas",
+        error: 'Informações de Endereço são requeridas',
       });
     }
 
@@ -79,13 +79,13 @@ class ProductiveLocaleController {
 
     if (productiveLocaleByAddress && productiveLocaleByAddress.id !== id) {
       return response.status(400).json({
-        error: "Informações de Endereço já estão sendo utilizadas",
+        error: 'Informações de Endereço já estão sendo utilizadas',
       });
     }
 
     const updatedProductiveLocale = await ProductiveLocaleRepository.update(
       id,
-      { address_info, quality_seal_id }
+      { address_info, quality_seal_id },
     );
 
     response.status(200).json({
@@ -102,20 +102,20 @@ class ProductiveLocaleController {
       if (!productiveLocale) {
         return response
           .status(404)
-          .json({ error: "Local Produtivo não encontrado" });
+          .json({ error: 'Local Produtivo não encontrado' });
       }
 
       const productiveLocaleExcluded = await ProductiveLocaleRepository.delete(
-        id
+        id,
       );
 
       response.status(200).json({
         message: `${productiveLocaleExcluded.name} foi excluído`,
       });
     } catch (e) {
-      console.log("Erro na requisição ou UUID não está no formato:", e);
+      console.log('Erro na requisição ou UUID não está no formato:', e);
     }
   }
 }
 
-module.exports = new ProductiveLocaleController();
+export default new ProductiveLocaleController();

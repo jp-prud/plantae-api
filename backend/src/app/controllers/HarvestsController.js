@@ -1,4 +1,4 @@
-const HarvestsRepository = require("../repositories/HarvestsRepository");
+import HarvestsRepository from '../repositories/HarvestsRepository';
 
 class HarvestsController {
   async index(request, response) {
@@ -15,7 +15,7 @@ class HarvestsController {
     const harvests = await HarvestsRepository.findById(id);
 
     if (!harvests) {
-      return response.status(404).json({ error: "No harvests found" });
+      return response.status(404).json({ error: 'No harvests found' });
     }
 
     response.status(200).json(harvests);
@@ -28,7 +28,7 @@ class HarvestsController {
 
     if (harvestsByName) {
       return response.status(400).json({
-        error: "o produto já existe",
+        error: 'o produto já existe',
       });
     }
 
@@ -51,7 +51,7 @@ class HarvestsController {
 
     if (!harvestsExist) {
       return response.status(404).json({
-        error: "Produto not found",
+        error: 'Produto not found',
       });
     }
 
@@ -72,7 +72,7 @@ class HarvestsController {
     const harvestsExist = await HarvestsRepository.findById(id);
 
     if (!harvestsExist) {
-      return response.status(404).json({ error: "Harvestse não encontrado" });
+      return response.status(404).json({ error: 'Harvestse não encontrado' });
     }
 
     const harvests = await HarvestsRepository.delete(id);
@@ -83,4 +83,4 @@ class HarvestsController {
   }
 }
 
-module.exports = new HarvestsController();
+export default new HarvestsController();

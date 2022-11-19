@@ -1,4 +1,4 @@
-const ConsumersRepository = require("../repositories/ConsumerRepository");
+import ConsumersRepository from '../repositories/ConsumerRepository';
 
 class ConsumerController {
   async index(request, response) {
@@ -11,7 +11,7 @@ class ConsumerController {
     } catch (err) {
       return response
         .status(400)
-        .json({ error: "Ocorreu um erro com a base de dados" });
+        .json({ error: 'Ocorreu um erro com a base de dados' });
     }
   }
 
@@ -24,7 +24,7 @@ class ConsumerController {
       if (!consumer) {
         return response
           .status(404)
-          .json({ error: "Consumidor não encontrado" });
+          .json({ error: 'Consumidor não encontrado' });
       }
 
       response.status(200).json(consumer);
@@ -42,7 +42,7 @@ class ConsumerController {
 
     if (consumerByEmail) {
       return response.status(400).json({
-        error: "Email já está sendo usado",
+        error: 'Email já está sendo usado',
       });
     }
 
@@ -67,13 +67,13 @@ class ConsumerController {
 
       if (!consumerExist) {
         return response.status(404).json({
-          error: "Consumer não encontrado",
+          error: 'Consumer não encontrado',
         });
       }
 
       if (!email) {
         return response.status(400).json({
-          error: "Email é obrigatório",
+          error: 'Email é obrigatório',
         });
       }
 
@@ -81,7 +81,7 @@ class ConsumerController {
 
       if (consumerByEmail && consumerByEmail.id !== id) {
         return response.status(400).json({
-          error: "Email já está em uso",
+          error: 'Email já está em uso',
         });
       }
 
@@ -109,7 +109,7 @@ class ConsumerController {
       const consumerExist = await ConsumersRepository.findById(id);
 
       if (!consumerExist) {
-        return response.status(404).json({ error: "Consumer não encontrado" });
+        return response.status(404).json({ error: 'Consumer não encontrado' });
       }
 
       const consumer = await ConsumersRepository.delete(id);
@@ -125,4 +125,4 @@ class ConsumerController {
   }
 }
 
-module.exports = new ConsumerController();
+export default new ConsumerController();

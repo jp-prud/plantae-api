@@ -1,11 +1,11 @@
-const { Client } = require("pg");
+import { Client } from 'pg';
 
 const consumer = new Client({
-  host: "localhost",
+  host: 'localhost',
   port: 5432,
-  user: "root",
-  password: "root",
-  database: "plantae",
+  user: 'root',
+  password: 'root',
+  database: 'plantae',
 });
 
 consumer.connect();

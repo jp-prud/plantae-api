@@ -1,8 +1,8 @@
-const db = require("../../database");
+import db from '../../database';
 
 class ProductiveLocaleRepository {
-  async findAll(orderBy = "ASC") {
-    const direction = orderBy.toUpperCase() === "DESC" ? "DESC" : "ASC";
+  async findAll(orderBy = 'ASC') {
+    const direction = orderBy.toUpperCase() === 'DESC' ? 'DESC' : 'ASC';
 
     const rows = await db.query(`
       SELECT *
@@ -20,7 +20,7 @@ class ProductiveLocaleRepository {
     FROM productive_locale
     WHERE id = $1
   `,
-      [id]
+      [id],
     );
 
     return rows;
@@ -32,7 +32,7 @@ class ProductiveLocaleRepository {
       SELECT * FROM productive_locale
       WHERE address_info = $1
     `,
-      [address_info]
+      [address_info],
     );
 
     return rows;
@@ -46,7 +46,7 @@ quality_seal_id)
       VALUES($1, $2, $3)
       RETURNING *
     `,
-      [name, address_info, quality_seal_id]
+      [name, address_info, quality_seal_id],
     );
 
     return rows;
@@ -61,7 +61,7 @@ quality_seal_id)
       WHERE id = $1
       RETURNING *
     `,
-      [id, name, address_info, quality_seal_id]
+      [id, name, address_info, quality_seal_id],
     );
 
     return rows;
@@ -74,11 +74,11 @@ quality_seal_id)
       WHERE id = $1
       RETURNING *
     `,
-      [id]
+      [id],
     );
 
     return rows;
   }
 }
 
-module.exports = new ProductiveLocaleRepository();
+export default new ProductiveLocaleRepository();

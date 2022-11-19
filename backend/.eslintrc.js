@@ -1,9 +1,10 @@
-module.exports = {
+export default {
   env: {
     es2021: true,
     node: true,
   },
-  extends: ['eslint:recommended'],
+  extends: 'eslint:recommended',
+  overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
@@ -13,10 +14,5 @@ module.exports = {
     'linebreak-style': ['error', 'windows'],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
-    'class-methods-use-this': 'off',
-    'no-promise-executor-return': 'off',
-    'consistent-return': 'off',
-    camelcase: 'off',
-    'no-unused-vars': ['error', { argsIgnorePattern: 'next' }],
   },
 };

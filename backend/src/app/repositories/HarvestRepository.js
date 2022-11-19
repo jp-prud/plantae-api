@@ -1,8 +1,8 @@
-const db = require("../../database");
+import db from '../../database';
 
 class HarvestsRepository {
-  async findAll(orderBy = "ASC") {
-    const direction = orderBy.toUpperCase() === "DESC" ? "DESC" : "ASC";
+  async findAll(orderBy = 'ASC') {
+    const direction = orderBy.toUpperCase() === 'DESC' ? 'DESC' : 'ASC';
 
     const rows = await db.query(`
       SELECT harvests.*,
@@ -26,7 +26,7 @@ class HarvestsRepository {
     LEFT JOIN plans ON plans.id = harvests.plan_id
     WHERE harvests.id = $1
   `,
-      [id]
+      [id],
     );
 
     return rows;
@@ -38,7 +38,7 @@ class HarvestsRepository {
       SELECT * FROM harvests
       WHERE name = $1
     `,
-      [name]
+      [name],
     );
 
     return rows;
@@ -51,7 +51,7 @@ class HarvestsRepository {
       VALUES($1, $2, $3)
       RETURNING *
     `,
-      [harvested_in]
+      [harvested_in],
     );
 
     return rows;
@@ -65,7 +65,7 @@ class HarvestsRepository {
       harvested_in = $1
       RETURNING *
     `,
-      [id, harvested_in]
+      [harvested_in],
     );
 
     return rows;
@@ -78,11 +78,11 @@ class HarvestsRepository {
       WHERE harvested_in = $1
       RETURNING *
     `,
-      [id]
+      [id],
     );
 
     return rows;
   }
 }
 
-module.exports = new HarvestsRepository();
+export default new HarvestsRepository();

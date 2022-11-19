@@ -1,12 +1,12 @@
-const express = require('express');
-require('express-async-errors');
+import express from 'express';
+import 'express-async-errors';
 
-const swaggerUi = require('swagger-ui-express');
-const swaggerFile = require('./swagger.json');
+import swaggerUi from 'swagger-ui-express';
+import swaggerFile from './swagger.json';
 
-const cors = require('./app/middlewares/cors');
-const errorHandler = require('./app/middlewares/errorHandler');
-const routes = require('./routes');
+import cors from './app/middlewares/cors';
+import errorHandler from './app/middlewares/errorHandler';
+import routes from './routes';
 
 const app = express();
 

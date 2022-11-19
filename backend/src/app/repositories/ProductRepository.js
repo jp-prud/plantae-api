@@ -1,8 +1,8 @@
-const db = require("../../database");
+import db from '../../database';
 
 class ProductRepository {
-  async findAll(orderBy = "ASC") {
-    const direction = orderBy.toUpperCase() === "DESC" ? "DESC" : "ASC";
+  async findAll(orderBy = 'ASC') {
+    const direction = orderBy.toUpperCase() === 'DESC' ? 'DESC' : 'ASC';
 
     const rows = await db.query(`
       SELECT *
@@ -20,7 +20,7 @@ class ProductRepository {
     FROM product
     WHERE id = $1
   `,
-      [id]
+      [id],
     );
 
     return rows;
@@ -32,7 +32,7 @@ class ProductRepository {
       SELECT * FROM product
       WHERE name = $1
     `,
-      [name]
+      [name],
     );
 
     return rows;
@@ -45,7 +45,7 @@ class ProductRepository {
       VALUES($1, $2, $3)
       RETURNING *
     `,
-      [name, description, price]
+      [name, description, price],
     );
 
     return rows;
@@ -60,7 +60,7 @@ class ProductRepository {
       WHERE id = $1
       RETURNING *
     `,
-      [id, name, description, price]
+      [id, name, description, price],
     );
 
     return rows;
@@ -73,11 +73,11 @@ class ProductRepository {
       WHERE id = $1
       RETURNING *
     `,
-      [id]
+      [id],
     );
 
     return rows;
   }
 }
 
-module.exports = new ProductRepository();
+export default new ProductRepository();

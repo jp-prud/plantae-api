@@ -1,7 +1,7 @@
-const jwt = require('jsonwebtoken');
-const { promisify } = require('util');
+import jwt from 'jsonwebtoken';
+import { promisify } from 'util';
 
-class AuthController {
+class AuthMiddleware {
   async authenticate(request, response, next) {
     const { authorization } = request.headers;
 
@@ -21,4 +21,4 @@ class AuthController {
   }
 }
 
-module.exports = new AuthController();
+export default AuthMiddleware;
