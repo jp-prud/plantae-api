@@ -8,6 +8,11 @@ export default createGlobalStyle`
     font-family: 'Urbanist', sans-serif;
   }
 
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+  }
+
   button {
     border: none;
     cursor: pointer;

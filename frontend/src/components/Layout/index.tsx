@@ -6,12 +6,14 @@ import TopBar from '../TopBar';
 import { Wrapper, Main } from './styles';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const isAuthenticated = false;
+
   return (
     <Wrapper>
-      <Sidebar />
+      {isAuthenticated && <Sidebar />}
 
       <Main>
-        <TopBar />
+        {isAuthenticated && <TopBar />}
         {children}
       </Main>
     </Wrapper>
