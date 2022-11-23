@@ -10,7 +10,9 @@ export const Wrapper = styled.div`
 export const Main = styled.main`
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 24px;
   padding: 24px;
+  justify-content: flex-start;
+  align-items: center;
 `;

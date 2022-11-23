@@ -6,7 +6,7 @@ import TopBar from '../TopBar';
 import { Wrapper, Main } from './styles';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const isAuthenticated = false;
+  const isAuthenticated = true;
 
   return (
     <Wrapper>

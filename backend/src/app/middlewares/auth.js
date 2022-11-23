@@ -1,5 +1,5 @@
-import jwt from 'jsonwebtoken';
-import { promisify } from 'util';
+const jwt = require('jsonwebtoken');
+const { promisify } = require('util');
 
 class AuthMiddleware {
   async authenticate(request, response, next) {
@@ -21,4 +21,4 @@ class AuthMiddleware {
   }
 }
 
-export default AuthMiddleware;
+module.exports AuthMiddleware;

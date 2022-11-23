@@ -11,9 +11,7 @@ type ILink = {
 export default function SideBar() {
   const linksMock: Array<ILink> = [
     { href: '/', label: 'Página Inicial' },
-    { href: '/consumers', label: 'Consumidores' },
-    { href: '/products', label: 'Produtos' },
-    { href: '/productive-locale', label: 'Locais Produtivos' },
+    { href: '/info', label: 'Informações' },
   ];
 
   const [sideBarIsOpen, setSideBarIsOpen] = useState<boolean>(false);

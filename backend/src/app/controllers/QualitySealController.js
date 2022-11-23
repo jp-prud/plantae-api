@@ -1,4 +1,4 @@
-import QualitySealRepository from '../repositories/QualitySealRepository';
+const QualitySealRepository = require('../repositories/QualitySealRepository');
 
 class QualitySealController {
   async index(request, response) {
@@ -113,4 +113,4 @@ class QualitySealController {
   }
 }
 
-export default new QualitySealController();
+module.exports = new QualitySealController();

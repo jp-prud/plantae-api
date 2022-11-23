@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import GenericForm from '../../components/GenericForm';
 
-export default function ProductiveLocale() {
+export default function ProductPage() {
+  const [name, setName] = useState();
+
   return (
     <GenericForm
       fields={[
@@ -13,26 +16,26 @@ export default function ProductiveLocale() {
           onChange: () => alert(''),
         },
         {
-          label: 'Endereço',
+          label: 'Descrição',
           type: 'text',
           hasError: false,
-          error: 'Endereço é obrigatório',
+          error: 'Descrição é obrigatório',
           value: '',
           onChange: () => alert(''),
         },
         {
-          label: 'ID do Selo de Qualidade',
-          type: 'text',
+          label: 'Preço',
+          type: 'number',
           hasError: false,
-          error: 'ID do Selo de Qualidade é obrigatório',
+          error: 'Preço é obrigatório',
           value: '',
           onChange: () => alert(''),
         },
       ]}
       submitButtonLabel="Cadastrar!"
       header={{
-        title: 'Cadastre um novo Selo Produtivo',
-        subtitle: 'Insira as informações do Selo Produtivo',
+        title: 'Cadastre um novo Produto',
+        subtitle: 'Insira as informações do produto',
       }}
     />
   );

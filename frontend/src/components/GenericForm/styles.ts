@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import GenericContainer from '../GenericContainer';
 
 export const Container = styled(GenericContainer)`
+  max-width: 560px;
   gap: 24px;
   display: flex;
   flex-direction: column;
@@ -28,7 +29,6 @@ export const FormGroup = styled.div`
 export const Input = styled.input`
   height: 48px;
   width: 100%;
-  max-width: 372px;
   padding: 0px 16px;
   background: #fafafa;
   border: 1px solid #9e9e9e;

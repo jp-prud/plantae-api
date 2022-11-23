@@ -2,6 +2,7 @@ interface IGenericTableHeader {
   title: string;
   subtitle: string;
   buttonLabel: string;
+  buttonLink: string;
 }
 
 export interface IGenericTable<T> {

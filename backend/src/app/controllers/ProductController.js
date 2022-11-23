@@ -1,4 +1,4 @@
-import ProductRepository from '../repositories/ProductRepository';
+const ProductRepository = require('../repositories/ProductRepository');
 
 class ProductController {
   async index(request, response) {
@@ -115,6 +115,8 @@ class ProductController {
         message: `${product.name} foi excluído`,
       });
     } catch (err) {
+      console.log(err)
+
       return response
         .status(400)
         .json({ error: "ID informado não é do tipo 'UUID'" });
@@ -122,4 +124,4 @@ class ProductController {
   }
 }
 
-export default new ProductController();
+module.exports = new ProductController();

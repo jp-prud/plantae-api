@@ -1,12 +1,11 @@
-import db from '../../database';
+const db = require('../../database');
 
 class ProductRepository {
   async findAll(orderBy = 'ASC') {
     const direction = orderBy.toUpperCase() === 'DESC' ? 'DESC' : 'ASC';
 
     const rows = await db.query(`
-      SELECT *
-      FROM product
+      SELECT * FROM product
       ORDER BY product.name ${direction}
     `);
 
@@ -16,8 +15,7 @@ class ProductRepository {
   async findById(id) {
     const [rows] = await db.query(
       `
-    SELECT *
-    FROM product
+    SELECT * FROM product
     WHERE id = $1
   `,
       [id],
@@ -80,4 +78,4 @@ class ProductRepository {
   }
 }
 
-export default new ProductRepository();
+module.exports = new ProductRepository();

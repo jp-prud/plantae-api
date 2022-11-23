@@ -1,9 +1,9 @@
-import { Router } from 'express';
+const { Router } = require('express');
 
-import ConsumerController from './app/controllers/ConsumerController';
-import ProductController from './app/controllers/ProductController';
-import ProductiveLocaleController from './app/controllers/ProductiveLocaleController';
-import QualitySealController from './app/controllers/QualitySealController';
+const ConsumerController = require('./app/controllers/ConsumerController');
+const ProductController = require('./app/controllers/ProductController');
+const ProductiveLocaleController = require('./app/controllers/ProductiveLocaleController');
+const QualitySealController = require('./app/controllers/QualitySealController');
 
 const router = Router();
 
@@ -35,4 +35,4 @@ router.post('/quality-seal', QualitySealController.store);
 router.put('/quality-seal/:id', QualitySealController.update);
 router.delete('/quality-seal/:id', QualitySealController.delete);
 
-export default router;
+module.exports = router;

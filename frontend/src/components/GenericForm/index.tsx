@@ -46,7 +46,9 @@ export default function GenericForm({
         ))}
 
         <FormGroup>
-          <Button type="submit">{submitButtonLabel}</Button>
+          <Button type="submit">
+            <span>{submitButtonLabel}</span>
+          </Button>
         </FormGroup>
       </Form>
     </Container>

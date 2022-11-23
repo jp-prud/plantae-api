@@ -1,4 +1,4 @@
-import db from '../../database';
+const db = require('../../database');
 
 class ProductRepository {
   async findAll(orderBy = 'ASC') {
@@ -80,4 +80,4 @@ class ProductRepository {
   }
 }
 
-export default new ProductRepository();
+module.exports = new ProductRepository();

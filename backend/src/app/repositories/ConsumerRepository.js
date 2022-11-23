@@ -1,4 +1,4 @@
-import db from '../../database';
+const db = require('../../database');
 
 class ConsumerRepository {
   async findAll() {
@@ -89,4 +89,4 @@ class ConsumerRepository {
   }
 }
 
-export default new ConsumerRepository();
+module.exports = new ConsumerRepository();

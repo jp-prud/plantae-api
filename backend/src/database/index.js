@@ -1,16 +1,20 @@
-import { Client } from 'pg';
+const { Client } = require('pg');
 
-const consumer = new Client({
-  host: 'localhost',
-  port: 5432,
-  user: 'root',
-  password: 'root',
-  database: 'plantae',
-});
+try {
+  const consumer = new Client({
+    host: 'localhost',
+    port: 5432,
+    user: 'root',
+    password: 'root',
+    database: 'plantae',
+  });
 
-consumer.connect();
+  consumer.connect();
 
-exports.query = async (query, values) => {
-  const { rows } = await consumer.query(query, values);
-  return rows;
-};
+  exports.query = async (query, values) => {
+    const { rows } = await consumer.query(query, values);
+    return rows;
+  };
+} catch (error) {
+  console.log(error);
+}

@@ -1,4 +1,4 @@
-import db from '../../database';
+const db = require('../../database');
 
 class ProductiveLocaleRepository {
   async findAll(orderBy = 'ASC') {
@@ -81,4 +81,4 @@ quality_seal_id)
   }
 }
 
-export default new ProductiveLocaleRepository();
+module.exports = new ProductiveLocaleRepository();

@@ -1,6 +1,6 @@
 import GenericForm from '../../components/GenericForm';
 
-export default function ProductiveLocale() {
+export default function QualitySeal() {
   return (
     <GenericForm
       fields={[
@@ -13,26 +13,18 @@ export default function ProductiveLocale() {
           onChange: () => alert(''),
         },
         {
-          label: 'Endereço',
+          label: 'Image Link',
           type: 'text',
           hasError: false,
-          error: 'Endereço é obrigatório',
-          value: '',
-          onChange: () => alert(''),
-        },
-        {
-          label: 'ID do Selo de Qualidade',
-          type: 'text',
-          hasError: false,
-          error: 'ID do Selo de Qualidade é obrigatório',
+          error: 'Imagem é obrigatório',
           value: '',
           onChange: () => alert(''),
         },
       ]}
       submitButtonLabel="Cadastrar!"
       header={{
-        title: 'Cadastre um novo Selo Produtivo',
-        subtitle: 'Insira as informações do Selo Produtivo',
+        title: 'Cadastre um novo Selo de Qualidade',
+        subtitle: 'Insira as informações do selo de qualidade',
       }}
     />
   );

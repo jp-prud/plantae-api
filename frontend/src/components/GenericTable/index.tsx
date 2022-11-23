@@ -1,4 +1,4 @@
-import { Table, TableHeader, TableMain } from './styles';
+import { Table, TableHeader, TableMain, Separator, AddButton } from './styles';
 import { IGenericTable } from './types';
 
 // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-constraint
@@ -15,10 +15,19 @@ function GenericTable<T extends unknown>({
           <p>{header.subtitle}</p>
         </div>
 
-        <a href="/new-product">{header.buttonLabel}</a>
+        <AddButton>
+          <a href={header.buttonLink}>{header.buttonLabel}</a>
+        </AddButton>
       </TableHeader>
 
-      <TableMain>{data.map(item => renderItem(item))}</TableMain>
+      <TableMain>
+        {data.map(item => (
+          <>
+            {renderItem(item)}
+            {data.length > 1 && <Separator />}
+          </>
+        ))}
+      </TableMain>
     </Table>
   );
 }

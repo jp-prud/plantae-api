@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
-  "type": "module",
   "scripts": {
     "start": "nodemon src/index.js",
     "lint": "eslint . --ext",
@@ -12,19 +11,19 @@
   "author": "João Pedro Prudêncio",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.27.0",
     "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.2.1",
     "jsonwebtoken": "^8.5.1",
     "nodemon": "^2.0.15",
-    "eslint": "^8.27.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.7.1"
   },
   "dependencies": {
     "express": "^4.17.2",
     "express-async-errors": "^3.1.1",
-    "pg": "^8.7.1",
+    "pg": "^8.8.0",
     "swagger-ui-express": "^4.5.0",
     "uuid": "^8.3.2"
   }

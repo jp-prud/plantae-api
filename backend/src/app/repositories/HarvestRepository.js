@@ -1,4 +1,4 @@
-import db from '../../database';
+const db = require('../../database');
 
 class HarvestsRepository {
   async findAll(orderBy = 'ASC') {
@@ -85,4 +85,4 @@ class HarvestsRepository {
   }
 }
 
-export default new HarvestsRepository();
+module.exports = new HarvestsRepository();

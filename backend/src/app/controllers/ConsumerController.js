@@ -1,4 +1,4 @@
-import ConsumersRepository from '../repositories/ConsumerRepository';
+const ConsumersRepository = require('../repositories/ConsumerRepository');
 
 class ConsumerController {
   async index(request, response) {
@@ -125,4 +125,4 @@ class ConsumerController {
   }
 }
 
-export default new ConsumerController();
+module.exports = new ConsumerController();

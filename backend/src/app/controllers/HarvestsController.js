@@ -1,4 +1,4 @@
-import HarvestsRepository from '../repositories/HarvestsRepository';
+const HarvestsRepository = require('../repositories/HarvestsRepository');
 
 class HarvestsController {
   async index(request, response) {
@@ -83,4 +83,4 @@ class HarvestsController {
   }
 }
 
-export default new HarvestsController();
+module.exports = new HarvestsController();

@@ -1,4 +1,4 @@
-import ProductiveLocaleRepository from '../repositories/ProductiveLocaleRepository';
+const ProductiveLocaleRepository = require('../repositories/ProductiveLocaleRepository');
 
 class ProductiveLocaleController {
   async index(request, response) {
@@ -118,4 +118,4 @@ class ProductiveLocaleController {
   }
 }
 
-export default new ProductiveLocaleController();
+module.exports = new ProductiveLocaleController();

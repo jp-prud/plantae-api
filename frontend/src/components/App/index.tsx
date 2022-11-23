@@ -1,4 +1,4 @@
-import React from 'react';
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { BrowserRouter } from 'react-router-dom';
 import Routes from '../../Routes';
 import Layout from '../Layout';
@@ -6,13 +6,17 @@ import Layout from '../Layout';
 import GlobalStyles from '../../assets/styles/globalStyles';
 
 function App() {
+  const queryClient = new QueryClient();
+
   return (
     <BrowserRouter>
-      <GlobalStyles />
+      <QueryClientProvider client={queryClient}>
+        <GlobalStyles />
 
-      <Layout>
-        <Routes />
-      </Layout>
+        <Layout>
+          <Routes />
+        </Layout>
+      </QueryClientProvider>
     </BrowserRouter>
   );
 }
