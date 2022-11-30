@@ -19,5 +19,10 @@ export default styled.button`
     color: #fff;
     font-weight: 600;
     font-size: 16px;
+    display: flex;
+    flex: 1;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
   }
 `;

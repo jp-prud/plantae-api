@@ -4,6 +4,7 @@ export const Wrapper = styled.main`
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
+  width: 100%;
 
   > div {
     display: flex;
