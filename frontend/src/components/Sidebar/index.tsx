@@ -1,4 +1,3 @@
-import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Wrapper, LinksList } from './styles';
@@ -11,21 +10,11 @@ type ILink = {
 export default function SideBar() {
   const linksMock: Array<ILink> = [
     { href: '/', label: 'Página Inicial' },
-    { href: '/info', label: 'Informações' },
+    { href: '/infos', label: 'Informações' },
   ];
 
-  const [sideBarIsOpen, setSideBarIsOpen] = useState<boolean>(false);
-
-  const handleHoverOpenSideBar = useCallback(() => {
-    setSideBarIsOpen((prevState: boolean) => !prevState);
-  }, []);
-
   return (
-    <Wrapper
-      isOpen={sideBarIsOpen}
-      onMouseEnter={handleHoverOpenSideBar}
-      onMouseLeave={handleHoverOpenSideBar}
-    >
+    <Wrapper>
       <LinksList>
         {linksMock.map(link => (
           <Link to={link.href}>
