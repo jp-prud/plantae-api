@@ -1,21 +1,11 @@
 import styled from 'styled-components';
 
-interface IWrapper {
-  isOpen: boolean;
-}
-
-export const Wrapper = styled.div<IWrapper>`
-  height: 100vh;
-  width: ${(props: IWrapper) => (props.isOpen ? 260 : 60)}px;
+export const Wrapper = styled.div`
+  flex: 1;
+  min-width: 260px;
   padding: 32px 16px;
   background: #fff;
   transition: 0.5s all;
-
-  span {
-    opacity: ${(props: IWrapper) => (props.isOpen ? '1' : '0')};
-    pointer-events: ${(props: IWrapper) => (props.isOpen ? 'initial' : 'none')};
-    transition: 0.5s all;
-  }
 
   @media (max-width: 980px) {
     width: 60px;
