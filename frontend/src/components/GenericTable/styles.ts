@@ -3,7 +3,6 @@ import Button from '../Button';
 import GenericContainer from '../GenericContainer';
 
 export const Table = styled.div`
-  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -30,6 +29,7 @@ export const TableHeader = styled(GenericContainer)`
 
 export const AddButton = styled(Button)`
   text-align: center;
+  max-width: 360px;
 `;
 
 export const TableMain = styled(GenericContainer)`
@@ -39,6 +39,10 @@ export const TableMain = styled(GenericContainer)`
   flex-direction: column;
   gap: 16px;
   flex: 1;
+
+  &:empty {
+    display: none;
+  }
 `;
 
 export const Separator = styled.div`
