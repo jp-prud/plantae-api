@@ -4,8 +4,19 @@ const ConsumerController = require('./app/controllers/ConsumerController');
 const ProductController = require('./app/controllers/ProductController');
 const ProductiveLocaleController = require('./app/controllers/ProductiveLocaleController');
 const QualitySealController = require('./app/controllers/QualitySealController');
+const AuthController = require('./app/controllers/AuthController');
+
+// const authMiddleware = require('./app/middlewares/auth');
 
 const router = Router();
+
+router.post('/authenticate', AuthController.index);
+router.post('/register', AuthController.store);
+
+/**
+ * Private route
+ */
+// router.use(authMiddleware);
 
 /* Consumer */
 router.get('/consumer', ConsumerController.index);

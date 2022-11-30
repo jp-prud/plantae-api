@@ -1,24 +1,22 @@
 const jwt = require('jsonwebtoken');
 const { promisify } = require('util');
 
-class AuthMiddleware {
-  async authenticate(request, response, next) {
-    const { authorization } = request.headers;
+async function authenticate(request, response, next) {
+  const { authorization } = request.headers;
 
-    if (!authorization) {
-      return response.sendStatus(401);
-    }
+  if (!authorization) {
+    return response.sendStatus(401);
+  }
 
-    const [, token] = authorization.split(' ');
+  const [, token] = authorization.split(' ');
 
-    try {
-      await promisify(jwt.verify)(token, 'PRIVATEKEY');
+  try {
+    await promisify(jwt.verify)(token, 'PRIVATEKEY');
 
-      return next();
-    } catch (err) {
-      return response.sendStatus(401);
-    }
+    return next();
+  } catch (err) {
+    return response.sendStatus(401);
   }
 }
 
-module.exports AuthMiddleware;
+module.exports = authenticate;
